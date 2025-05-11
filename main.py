@@ -17,7 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 # Constants
-EXCEL_PATH = "./capbudg.xls"
+EXCEL_PATH = "./Data/capbudg.xls"
 
 # Models for API responses
 class TablesResponse(BaseModel):
