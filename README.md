@@ -1,7 +1,7 @@
 # Excel Data API
 
 ## Overview
-This FastAPI application processes Excel data from a file and exposes API endpoints for interaction with the data. The application reads from the Excel file `./capbudg.xls` and provides endpoints to list tables, get table details, and calculate row sums.
+This FastAPI application processes Excel data from a file and exposes API endpoints for interaction with the data. The application reads from the Excel file `./Data/capbudg.xls` and provides endpoints to list tables, get table details, and calculate row sums.
 
 ## Features
 - Excel file processing with pandas
@@ -34,7 +34,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Ensure the Excel file exists at `capbudg.xls`
+4. Ensure the Excel file exists at `./Data/capbudg.xls`
 
 ## Usage
 
@@ -114,7 +114,8 @@ The API handles various error scenarios:
 
 ```
 .
-├── capbudg.xls              # Excel file with data
+├── Data/
+│   └── capbudg.xls          # Excel file with data
 ├── main.py                  # Main FastAPI application
 ├── requirements.txt         # Project dependencies
 └── README.md                # Project documentation
