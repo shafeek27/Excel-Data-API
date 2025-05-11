@@ -1,7 +1,7 @@
 # Excel Data API
 
 ## Overview
-This FastAPI application processes Excel data from a file and exposes API endpoints for interaction with the data. The application reads from the Excel file `capbudg.xls` and provides endpoints to list tables, get table details, and calculate row sums.
+This FastAPI application processes Excel data from a file and exposes API endpoints for interaction with the data. The application reads from the Excel file `./capbudg.xls` and provides endpoints to list tables, get table details, and calculate row sums.
 
 ## Features
 - Excel file processing with pandas
