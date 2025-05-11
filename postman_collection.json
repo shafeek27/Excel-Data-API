@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "94a5f3b1-5c8e-47a2-a84b-f8d9c41f5e91",
+		"name": "Excel Data API",
+		"description": "Collection for testing the Excel Data API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Root Endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						""
+					]
+				},
+				"description": "Get basic API information"
+			},
+			"response": []
+		},
+		{
+			"name": "List Tables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/list_tables",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"list_tables"
+					]
+				},
+				"description": "List all table names (sheet names) in the Excel file"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Table Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/get_table_details?table_name=Initial Investment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"get_table_details"
+					],
+					"query": [
+						{
+							"key": "table_name",
+							"value": "Initial Investment",
+							"description": "Name of the table/sheet to get details for"
+						}
+					]
+				},
+				"description": "Get details for a specific table"
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Row Sum",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/row_sum?table_name=Initial Investment&row_name=Tax Credit (if any )=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"row_sum"
+					],
+					"query": [
+						{
+							"key": "table_name",
+							"value": "Initial Investment",
+							"description": "Name of the table/sheet"
+						},
+						{
+							"key": "row_name",
+							"value": "Tax Credit (if any )=",
+							"description": "Name of the row to calculate sum for"
+						}
+					]
+				},
+				"description": "Calculate the sum of numerical values in a row"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Table Details - Invalid Table",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/get_table_details?table_name=NonExistentTable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"get_table_details"
+					],
+					"query": [
+						{
+							"key": "table_name",
+							"value": "NonExistentTable",
+							"description": "Name of a non-existent table"
+						}
+					]
+				},
+				"description": "Test error handling for invalid table name"
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Row Sum - Invalid Row",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/row_sum?table_name=Initial Investment&row_name=NonExistentRow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"row_sum"
+					],
+					"query": [
+						{
+							"key": "table_name",
+							"value": "Initial Investment",
+							"description": "Name of the table/sheet"
+						},
+						{
+							"key": "row_name",
+							"value": "NonExistentRow",
+							"description": "Name of a non-existent row"
+						}
+					]
+				},
+				"description": "Test error handling for invalid row name"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
